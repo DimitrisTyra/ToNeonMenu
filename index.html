@@ -3,174 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Neon Menu</title>
+    <title>To Neon Cafe - Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #e67e22; /* Πορτοκαλί του καφέ */
-            --bg-color: #1a1a1a;      /* Σκούρο background για στυλ */
-            --card-bg: #ffffff;
-        }
-
-        body { 
-            font-family: 'Roboto', sans-serif; 
-            background-color: var(--bg-color); 
-            margin: 0; 
-            padding: 0; 
-            color: #333;
-        }
-
-        /* Header με το λογότυπο */
-        .header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--primary-color);
-        }
-
-        .header h1 { 
-            font-family: 'Oswald', sans-serif; 
-            margin: 0; 
-            font-size: 2.5em; 
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .container { 
-            max-width: 500px; 
-            margin: -30px auto 40px; 
-            padding: 0 15px;
-        }
-
-        /* Κατηγορίες */
-        .category-title { 
-            background: var(--primary-color); 
-            color: white; 
-            padding: 12px 20px; 
-            border-radius: 50px; 
-            margin-top: 30px; 
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3em;
-            text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
-            display: inline-block;
-        }
-
-        /* Κάρτες Προϊόντων */
-        .menu-list {
-            background: var(--card-bg);
-            border-radius: 20px;
-            margin-top: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .item { 
-            display: flex; 
-            justify-content: space-between; 
-            padding: 20px; 
-            border-bottom: 1px solid #eee; 
-            transition: background 0.3s;
-        }
-
+        :root { --primary: #e67e22; --bg: #1a1a1a; --card: #ffffff; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--bg); margin: 0; padding: 0; color: #333; }
+        .header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1000'); background-size: cover; background-position: center; color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--primary); }
+        .header h1 { font-family: 'Oswald', sans-serif; margin: 0; font-size: 2.8em; letter-spacing: 2px; text-transform: uppercase; }
+        .container { max-width: 600px; margin: -30px auto 40px; padding: 0 15px; }
+        .category-title { background: var(--primary); color: white; padding: 12px 25px; border-radius: 50px; margin-top: 40px; font-family: 'Oswald', sans-serif; font-size: 1.4em; text-transform: uppercase; box-shadow: 0 4px 15px rgba(230,126,34,0.4); display: inline-block; }
+        .menu-list { background: var(--card); border-radius: 20px; margin-top: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .item { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; }
         .item:last-child { border-bottom: none; }
-
+        .item-img { width: 70px; height: 70px; border-radius: 12px; object-fit: cover; margin-right: 15px; background: #eee; flex-shrink: 0; }
         .item-info { flex: 1; text-align: left; }
-
-        .item-name { 
-            font-weight: 700; 
-            font-size: 1.1em; 
-            color: #2c3e50; 
-            margin: 0;
-        }
-
-        .item-desc { 
-            font-size: 0.85em; 
-            color: #7f8c8d; 
-            margin-top: 5px; 
-            line-height: 1.4;
-        }
-
-        .item-price { 
-            font-weight: 700; 
-            color: var(--primary-color); 
-            font-size: 1.2em; 
-            margin-left: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        footer {
-            text-align: center;
-            color: #777;
-            font-size: 0.8em;
-            margin-bottom: 30px;
-        }
+        .item-name { font-weight: 700; font-size: 1.05em; color: #2c3e50; margin: 0; }
+        .item-desc { font-size: 0.85em; color: #7f8c8d; margin-top: 4px; line-height: 1.3; }
+        .item-price { font-weight: 700; color: var(--primary); font-size: 1.1em; margin-left: 10px; white-space: nowrap; }
+        .footer { text-align: center; color: #888; padding: 20px; font-size: 0.8em; }
+        .extra-info { font-style: italic; font-size: 0.8em; color: #666; padding: 10px 20px; background: #f9f9f9; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
 <div class="header">
     <h1>TO NEON CAFE</h1>
-    <p>Premium Coffee & More</p>
+    <p>Καφέ - Ποτό - Φαγητό</p>
 </div>
 
 <div class="container">
-    
-    <div class="category-title">Καφέδες & Ροθήματα</div>
+
+    <div class="category-title">Club Sandwiches & Μερίδες</div>
     <div class="menu-list">
         <div class="item">
+            <img class="item-img" src="club_classic.jpg" alt="">
             <div class="item-info">
-                <p class="item-name">Φρέντο Εσπρέσο</p>
-                <p class="item-desc">Διπλή δόση espresso 100% Arabica με πάγο</p>
+                <p class="item-name">Club Sandwich Classic</p>
+                <p class="item-desc">Ζαμπόν, κασέρι, ντομάτα, μαρούλι</p>
             </div>
-            <div class="item-price">2.50€</div>
+            <div class="item-price">5.00€</div>
         </div>
-
         <div class="item">
+            <img class="item-img" src="club_chicken.jpg" alt="">
             <div class="item-info">
-                <p class="item-name">Φρέντο Καπουτσίνο</p>
-                <p class="item-desc">Με πλούσιο χειροποίητο κρύο αφρόγαλα</p>
+                <p class="item-name">Club Sandwich Κοτόπουλο</p>
+                <p class="item-desc">Κοτόπουλο, κασέρι, ντομάτα, μαρούλι, caesar sauce</p>
             </div>
-            <div class="item-price">3.00€</div>
+            <div class="item-price">6.00€</div>
         </div>
-        
+        <div class="extra-info">* Συνοδεύονται με φλουδάτες πατάτες country</div>
         <div class="item">
+            <img class="item-img" src="nuggets.jpg" alt="">
             <div class="item-info">
-                <p class="item-name">Ελληνικός Μονός</p>
-                <p class="item-desc">Παραδοσιακός ψημένος στη χόβολη</p>
+                <p class="item-name">Κοτομπουκιές μερίδα</p>
+                <p class="item-desc">Συνοδεύονται με πατάτες country & sauce</p>
             </div>
-            <div class="item-price">1.50€</div>
+            <div class="item-price">5.50€</div>
+        </div>
+        <div class="item">
+            <img class="item-img" src="sausage.jpg" alt="">
+            <div class="item-info">
+                <p class="item-name">Λουκάνικα Ποικιλία</p>
+                <p class="item-desc">Συνοδεύονται με πατάτες country</p>
+            </div>
+            <div class="item-price">6.50€</div>
         </div>
     </div>
 
-    <div class="category-title">Αναψυκτικά</div>
+    <div class="category-title">Καφέδες - Ροφήματα</div>
     <div class="menu-list">
-        <div class="item">
-            <div class="item-info">
-                <p class="item-name">Coca Cola 330ml</p>
-                <p class="item-desc">Classic / Zero / Light</p>
-            </div>
-            <div class="item-price">2.00€</div>
-        </div>
-        
-        <div class="item">
-            <div class="item-info">
-                <p class="item-name">Πορτοκαλάδα ΕΨΑ</p>
-                <p class="item-desc">Με ή χωρίς ανθρακικό</p>
-            </div>
-            <div class="item-price">2.00€</div>
-        </div>
+        <div class="item"><div class="item-info"><p class="item-name">Ελληνικός Μονός</p></div><div class="item-price">1.70€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Ελληνικός Διπλός</p></div><div class="item-price">2.10€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Φραπέ - Nescafe</p></div><div class="item-price">2.50€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Espresso Μονός</p></div><div class="item-price">2.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Espresso Διπλός</p></div><div class="item-price">3.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Freddo Espresso</p></div><div class="item-price">3.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Freddo Cappuccino</p></div><div class="item-price">3.50€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Σοκολάτα (Κλασική/Γεύση)</p></div><div class="item-price">2.50€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Φυσικό Μεταλλικό Νερό 500ml</p></div><div class="item-price">0.50€</div></div>
+    </div>
+
+    <div class="category-title">Αναψυκτικά 330ml & Energy</div>
+    <div class="menu-list">
+        <div class="item"><div class="item-info"><p class="item-name">Coca-Cola (Classic/Zero)</p></div><div class="item-price">2.30€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Πορτοκαλάδα / Λεμονάδα / Γκαζόζα</p></div><div class="item-price">2.30€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Σπιτική Λεμονάδα</p></div><div class="item-price">3.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Ενεργειακό Ποτό 8G</p></div><div class="item-price">3.00€</div></div>
+    </div>
+
+    <div class="category-title">Τσάι</div>
+    <div class="menu-list">
+        <div class="item"><div class="item-info"><p class="item-name">Λεμόνι / Ροδάκινο / Πράσινο</p></div><div class="item-price">2.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Φρούτα του Δάσους / Μάνγκο / Καρπούζι</p></div><div class="item-price">2.30€</div></div>
+    </div>
+
+    <div class="category-title">Μπύρες 500ml & Βαρέλι</div>
+    <div class="menu-list">
+        <div class="item"><div class="item-info"><p class="item-name">Amstel / Amstel Radler / Free</p></div><div class="item-price">3.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Heineken / Fischer / Kaiser</p></div><div class="item-price">3.50€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Άλφα / Μύθος / Βεργίνα</p></div><div class="item-price">3.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Βαρέλι Μικρό 300ml</p></div><div class="item-price">3.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Βαρέλι Μεγάλο 500ml</p></div><div class="item-price">3.50€</div></div>
+    </div>
+
+    <div class="category-title">Αλκοολούχα Ποτά</div>
+    <div class="menu-list">
+        <div class="item"><div class="item-info"><p class="item-name">Ποτό Απλό</p></div><div class="item-price">5.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Ποτό Special</p></div><div class="item-price">6.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Ούζο / Τσίπουρο 50ml</p></div><div class="item-price">1.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Ούζο / Τσίπουρο 200ml</p></div><div class="item-price">4.00€</div></div>
+        <div class="item"><div class="item-info"><p class="item-name">Κρασί Φιάλη Ατομική</p></div><div class="item-price">3.50€</div></div>
     </div>
 
 </div>
 
-<footer>
-    &copy; 2026 To Neon Cafe | Created with &hearts;
-</footer>
+<div class="footer">
+    &copy; 2026 To Neon Cafe | Σέρρες
+</div>
 
 </body>
 </html>
